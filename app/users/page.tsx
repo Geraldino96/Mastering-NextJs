@@ -7,11 +7,10 @@ interface Props {
 }
 
 const UsersPage = async ({ searchParams: {sortOrder}}: Props) => {
-
   return (
     <>
       <h1>Users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
+      <p>{new Date().toLocaleString()}</p>
       <Link href="/users/new" className='btn '>New User</Link>
       <Suspense fallback={<p>Loading...</p>}>
         <UserTable sortOrder={sortOrder}></UserTable>
